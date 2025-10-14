@@ -1,0 +1,22 @@
+# WordPress core
+wp-admin/
+wp-includes/
+
+# Sensitive files
+wp-config.php
+.htaccess
+
+# Uploads and cache
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# OS & IDE junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node and Composer dependencies
+node_modules/
+vendor/
