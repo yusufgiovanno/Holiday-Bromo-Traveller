@@ -7,7 +7,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 mt-8">
+    <section class="max-w-[1440px] mx-auto px-4 mt-8">
         <div class="bg-green-900/25 rounded-lg p-6 md:p-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex items-center justify-center">
@@ -67,7 +67,7 @@
     </section>
 
     <!-- Feature Cards -->
-    <section class="max-w-7xl mx-auto px-4 mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <section class="max-w-[1440px] mx-auto px-4 mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="border rounded-lg p-4 shadow-sm">
             <h6 class="font-bold mb-2"><i class="bi bi-tree"></i> Local guides</h6>
             <p class="font-light text-gray-600">Certified guides who know the best sunrise spots and photo angles.</p>
@@ -84,7 +84,7 @@
     </section>
 
     <!-- News Section -->
-    <section class="max-w-7xl mx-auto px-4 mt-12">
+    <section class="max-w-[1440px] mx-auto px-4 mt-12">
         <h4 class="font-bold mb-4">Latest News</h4>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="border rounded-lg overflow-hidden flex flex-col">
@@ -126,7 +126,7 @@
     </section>
 
     <!-- How it Works -->
-    <section class="max-w-7xl mx-auto px-4 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <section class="max-w-[1440px] mx-auto px-4 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2">
             <h4 class="font-bold mb-4">How It Works</h4>
             <div class="space-y-4">
@@ -173,7 +173,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="max-w-7xl mx-auto px-4 mt-12">
+    <section class="max-w-[1440px] mx-auto px-4 mt-12">
         <h4 class="font-bold mb-4">What travelers say</h4>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="border rounded-lg p-4 flex flex-col justify-between h-full">
@@ -192,20 +192,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="max-w-7xl mx-auto px-4 mt-12 border-t pt-6 pb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-            <p class="font-bold">Bromo Travel Agency</p>
-            <p class="font-light"><i class="bi bi-envelope"></i> &nbsp;&nbsp;yusufgiovanno97@gmail.com</p>
-            <p class="font-light"><i class="bi bi-telephone"></i> &nbsp;&nbsp;+62 81 2345 1234</p>
-        </div>
-        <div class="text-right">
-            <p class="font-light"><i class="bi bi-geo-fill text-red-600"></i> 1st, Bromo Street, Probolinggo, East Java
-            </p>
-            <p class="font-light">&copy; 2025 Bromo Travel</p>
-        </div>
-    </footer>
-
+  
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const menu = document.getElementById('menu');

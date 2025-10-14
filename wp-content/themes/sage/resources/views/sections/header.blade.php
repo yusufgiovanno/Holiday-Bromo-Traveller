@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <nav class="sticky top-0 z-50 bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+    <div class="max-w-[1440px] mx-auto flex justify-between items-center px-4 py-4">
         <a href="#" class="brand-title">
             <p class="font-bold text-xl">Bromo Tour<br>
                 <small class="font-light text-gray-500 text-sm">Tailored trips to Mount Bromo</small>
