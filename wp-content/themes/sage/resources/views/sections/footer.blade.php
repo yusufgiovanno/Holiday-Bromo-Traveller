@@ -1,14 +1,35 @@
-
-  <footer class="max-w-[1440px] mx-auto px-4 mt-12 border-t pt-6 pb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-            <p class="font-bold">Bromo Travel Agency</p>
-            <p class="font-light"><i class="bi bi-envelope"></i> &nbsp;&nbsp;yusufgiovanno97@gmail.com</p>
-            <p class="font-light"><i class="bi bi-telephone"></i> &nbsp;&nbsp;+62 81 2345 1234</p>
-        </div>
-        <div class="text-right">
-            <p class="font-light"><i class="bi bi-geo-fill text-red-600"></i> 1st, Bromo Street, Probolinggo, East Java
-            </p>
-            <p class="font-light">&copy; 2025 Bromo Travel</p>
-        </div>
-    </footer>
+<footer class="border-t mt-16 bg-gray-50">
+  <div class="max-w-[1440px] mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700">
     
+    <div>
+      <h5 class="font-bold text-lg mb-3 text-gray-900">Bromo Travel Agency</h5>
+      <p class="text-sm leading-relaxed">
+        Your trusted partner for unforgettable Bromo and East Java adventures. 
+        We offer customized travel experiences, local guides, and seamless trip planning.
+      </p>
+    </div>
+
+    <div>
+      <h5 class="font-bold text-lg mb-3 text-gray-900">Quick Links</h5>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/" class="hover:text-[#4E8D7C] transition">Home</a></li>
+        <li><a href="/about" class="hover:text-[#4E8D7C] transition">About Us</a></li>
+     
+        <li><a href="/contact" class="hover:text-[#4E8D7C] transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h5 class="font-bold text-lg mb-3 text-gray-900">Contact</h5>
+      <ul class="space-y-2 text-sm">
+        <li><i class="bi bi-envelope"></i> &nbsp; yusufgiovanno97@gmail.com</li>
+        <li><i class="bi bi-telephone"></i> &nbsp; +62 81 2345 1234</li>
+        <li><i class="bi bi-geo-alt-fill text-red-600"></i> &nbsp; 1st, Bromo Street, Probolinggo, East Java</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t text-center text-sm text-gray-500 py-4">
+    <p>&copy; {{ date('Y') }} Bromo Travel — All rights reserved.</p>
+  </div>
+</footer>
