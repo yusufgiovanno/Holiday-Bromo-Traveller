@@ -8,63 +8,80 @@
 @section('content')
     <!-- Hero Section -->
     <section class="max-w-[1440px] mx-auto px-4 mt-8">
-        <div class="bg-green-900/25 rounded-lg p-6 md:p-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex items-center justify-center">
+        <div class="relative overflow-hidden rounded-xl ">
+            <div 
+            class="absolute inset-0 bg-cover bg-center opacity-40 z-0" 
+            style="background-image: url('{{ asset('assets/mount-CoiR9lrY.png') }}');">
+            </div>
+
+            <div class="relative bg-green-900/40 backdrop-blur-sm rounded-xl p-6 md:p-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                
+                <!-- Left CTA -->
+                <header class="text-center md:text-left text-white space-y-4">
+                <h1 class="text-4xl font-bold leading-tight">Sunrise at Mount Bromo — Yours, personalized</h1>
+                <h6 class="text-lg font-light">
+                    Choose the pace, activities, and comforts. Local guides, private jeeps, and unforgettable sunrise moments.
+                </h6>
+                <div class="flex flex-col sm:flex-row gap-3 mt-6 justify-center md:justify-start">
+                    <button class="bg-[#A67C52] hover:bg-[#946A45] text-white px-6 py-3 rounded-md w-full sm:w-auto transition">Book Your Trip</button>
+                    <button class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-md w-full sm:w-auto transition">View Gallery</button>
+                </div>
+                <p class="text-sm text-gray-200">Popular: 1-day sunrise • 2-day trekking • Photography tours</p>
+                </header>
+
+                <!-- Right Form -->
+                <form id="planner-form" class="bg-white rounded-2xl p-6 shadow-lg space-y-4">
+                <div>
+                    <h5 class="font-semibold mb-1">Build your trip — quick planner</h5>
+                    <p class="font-light text-gray-500 text-sm mb-4">
+                    Tell us what you like and we'll suggest a tailored plan.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="col-span-2">
+                    <label class="block mb-1 text-sm font-medium">Travel Date</label>
+                    <input type="date" class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]" />
+                    </div>
                     <div>
-                        <h1 class="text-4xl font-bold text-white leading-tight">Sunrise at Mount Bromo — Yours, personalized
-                        </h1>
-                        <h6 class="mt-4 text-white text-lg">Choose the pace, activities, and comforts. Local guides, private
-                            jeeps, and unforgettable sunrise moments.</h6>
-                        <div class="flex flex-col sm:flex-row gap-3 mt-8 mb-6">
-                            <button class="bg-[#A67C52] text-white px-5 py-3 rounded-md w-full sm:w-auto">Book Your
-                                Trip</button>
-                            <button class="bg-gray-600 text-white px-5 py-3 rounded-md w-full sm:w-auto">View
-                                Gallery</button>
-                        </div>
-                        <div class="text-sm text-gray-200">Popular: 1-day sunrise • 2-day trekking • Photography tours</div>
+                    <label class="block mb-1 text-sm font-medium">Duration</label>
+                    <select class="w-full rounded-md border border-gray-300 p-2 text-sm">
+                        <option>1 Day</option>
+                        <option>2 Days</option>
+                        <option>2+ Days</option>
+                    </select>
+                    </div>
+                    <div>
+                    <label class="block mb-1 text-sm font-medium">Group Size</label>
+                    <select class="w-full rounded-md border border-gray-300 p-2 text-sm">
+                        <option>Solo</option>
+                        <option>Couple</option>
+                        <option>Small Group (3–6)</option>
+                        <option>Private Group (7+)</option>
+                    </select>
+                    </div>
+                    <div class="col-span-2">
+                    <label class="block mb-1 text-sm font-medium">E-mail Address</label>
+                    <input type="email" placeholder="Your e-mail address here..."
+                        class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]" />
+                    <button type="submit"
+                        class="bg-[#4E8D7C] hover:bg-[#3D7465] text-white rounded-md px-4 py-2 mt-3 float-right text-sm transition">
+                        See My Plan
+                    </button>
                     </div>
                 </div>
-                <div class="bg-white rounded-2xl p-6">
-                    <h5 class="font-semibold mb-1">Build your trip — quick planner</h5>
-                    <p class="font-light text-gray-500 text-sm mb-4">Tell us what you like and we'll suggest a tailored
-                        plan.</p>
-                    <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="col-span-2">
-                            <label class="block mb-1 text-sm font-medium">Travel Date</label>
-                            <input type="date" class="w-full rounded-md border border-gray-300 p-2 text-sm" />
-                        </div>
-                        <div>
-                            <label class="block mb-1 text-sm font-medium">Duration</label>
-                            <select class="w-full rounded-md border border-gray-300 p-2 text-sm">
-                                <option>1 Day</option>
-                                <option>2 Days</option>
-                                <option>2+ Days</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block mb-1 text-sm font-medium">Group Size</label>
-                            <select class="w-full rounded-md border border-gray-300 p-2 text-sm">
-                                <option>Solo</option>
-                                <option>Couple</option>
-                                <option>Small Group (3-6)</option>
-                                <option>Private Group (7+)</option>
-                            </select>
-                        </div>
-                        <div class="col-span-2">
-                            <label class="block mb-1 text-sm font-medium">E-mail Address</label>
-                            <input type="email" placeholder="Your e-mail address here..."
-                                class="w-full rounded-md border border-gray-300 p-2 text-sm" />
-                            <button type="button"
-                                class="bg-[#4E8D7C] text-white rounded-md px-4 py-2 mt-3 float-right text-sm">Get
-                                Offer</button>
-                        </div>
-                    </form>
-                    <p class="mt-3 text-gray-500 text-sm font-light">No commitment — we’ll send a custom plan and price.</p>
-                </div>
+
+                <p class="mt-3 text-gray-500 text-sm font-light">
+                    No commitment — we’ll send a custom plan and price.
+                </p>
+                </form>
+
+            </div>
             </div>
         </div>
     </section>
+
 
     <!-- Feature Cards -->
     <section class="max-w-[1440px] mx-auto px-4 mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">

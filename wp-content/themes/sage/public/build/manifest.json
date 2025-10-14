@@ -4,7 +4,7 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DSV2t8A-.css",
+    "file": "assets/app-D_ISbgbp.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "names": [
@@ -12,12 +12,16 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-AmbYAk1k.css",
+    "file": "assets/editor-B0ANDxly.css",
     "src": "resources/css/editor.css",
     "isEntry": true,
     "names": [
       "editor.css"
     ]
+  },
+  "resources/images/mount.png": {
+    "file": "assets/mount-CoiR9lrY.png",
+    "src": "resources/images/mount.png"
   },
   "resources/js/app.js": {
     "file": "assets/app-l0sNRNKZ.js",
