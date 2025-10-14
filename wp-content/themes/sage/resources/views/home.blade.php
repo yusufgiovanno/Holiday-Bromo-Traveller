@@ -87,43 +87,42 @@
     <section class="max-w-[1440px] mx-auto px-4 mt-12">
         <h4 class="font-bold mb-4">Latest News</h4>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            @php
+            $latest_posts = get_posts([
+                'post_type'      => 'post',
+                'posts_per_page' => 3,
+                'post_status'    => 'publish',
+            ]);
+            @endphp
+
+            @foreach ($latest_posts as $post)
+            @php setup_postdata($post); @endphp
+
             <div class="border rounded-lg overflow-hidden flex flex-col">
-                <img src="https://a.storyblok.com/f/78828/dd7b752616/ef-id-blog-top-banner-6-tips-wisata-ke-bromo-dari-malang.jpg/m/1500x750/filters:focal(960x375:961x376):quality(70)"
-                    class="h-40 object-cover">
+                @if (has_post_thumbnail($post->ID))
+                {!! get_the_post_thumbnail($post->ID, 'medium_large', ['class' => 'h-40 w-full object-cover']) !!}
+                @else
+                <img src="{{ asset('images/placeholder.jpg') }}" class="h-40 w-full object-cover" alt="Placeholder">
+                @endif
+
                 <div class="p-4 flex flex-col flex-grow">
-                    <p class="font-bold">Sunrise</p>
-                    <p class="text-sm text-gray-600 flex-grow">A short, punchy description that teases the content and
-                        invites clicks.</p>
-                    <div class="text-right mt-2">
-                        <a href="#" class="text-[#4E8D7C] hover:underline text-sm">Read more</a>
-                    </div>
+                <p class="font-bold">{{ get_the_title($post->ID) }}</p>
+                <p class="text-sm text-gray-600 flex-grow">
+                    {{ get_the_excerpt($post->ID) }}
+                </p>
+                <div class="text-right mt-2">
+                    <a href="{{ get_permalink($post->ID) }}" class="text-[#4E8D7C] hover:underline text-sm">
+                    Read more
+                    </a>
+                </div>
                 </div>
             </div>
-            <div class="border rounded-lg overflow-hidden flex flex-col">
-                <img src="https://jadiberangkat.id/wp-content/uploads/2025/04/sunrise-bromo.webp" class="h-40 object-cover">
-                <div class="p-4 flex flex-col flex-grow">
-                    <p class="font-bold">Sunset</p>
-                    <p class="text-sm text-gray-600 flex-grow">A short, punchy description that teases the content and
-                        invites clicks.</p>
-                    <div class="text-right mt-2">
-                        <a href="#" class="text-[#4E8D7C] hover:underline text-sm">Read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="border rounded-lg overflow-hidden flex flex-col">
-                <img src="https://bromoeastjava.com/wp-content/uploads/2016/03/Savana-Hill-Whispering-Sand-Mount-Bromo.jpg"
-                    class="h-40 object-cover">
-                <div class="p-4 flex flex-col flex-grow">
-                    <p class="font-bold">Lorem Ipsum</p>
-                    <p class="text-sm text-gray-600 flex-grow">A short, punchy description that teases the content and
-                        invites clicks.</p>
-                    <div class="text-right mt-2">
-                        <a href="#" class="text-[#4E8D7C] hover:underline text-sm">Read more</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
+            @php wp_reset_postdata(); @endphp
         </div>
     </section>
+
 
     <!-- How it Works -->
     <section class="max-w-[1440px] mx-auto px-4 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
