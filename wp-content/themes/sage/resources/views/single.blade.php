@@ -30,75 +30,51 @@
     {!! get_the_content() !!}
   </section>
 
-  <section class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-        <!-- Contact Form -->
-        <section>
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
-                <h2 class="text-2xl font-semibold mb-8 text-gray-700">Send a Message</h2>
-                <form action="#" method="POST" class="space-y-6">
-                    <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-600">Full Name</label>
-                        <input type="text"
-                            class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
-                            placeholder="John Doe" required>
-                    </div>
+  <section class="bg-gray-50 py-16">
+        <div class="max-w-[1440px] mx-auto px-4">
 
-                    <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-600">Email</label>
-                        <input type="email"
-                            class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
-                            placeholder="you@example.com" required>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                @php
+                $latest_posts = get_posts([
+                    'post_type'      => 'post',
+                    'posts_per_page' => 3,
+                    'post_status'    => 'publish',
+                    'orderby'        => 'rand',
+                ]);
+                @endphp
 
-                    <!-- WhatsApp Number -->
-                    <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-600">WhatsApp Number</label>
-                        <div class="flex rounded-lg border border-gray-300 focus-within:ring-1 focus-within:ring-indigo-500 overflow-hidden">
-                            <span class="bg-gray-100 text-gray-600 text-sm px-3 flex items-center select-none">+62</span>
-                            <input
-                                type="tel"
-                                name="whatsapp"
-                                placeholder="812-3456-7890"
-                                class="w-full p-2 text-sm focus:outline-none"
-                                required
-                            >
+                @foreach ($latest_posts as $post)
+                @php setup_postdata($post); @endphp
+
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow flex flex-col">
+                    @if (has_post_thumbnail($post->ID))
+                    <div class="overflow-hidden">
+                        {!! get_the_post_thumbnail($post->ID, 'medium_large', ['class' => 'h-48 w-full object-cover hover:scale-110 transition-transform duration-500']) !!}
+                    </div>
+                    @else
+                    <img src="{{ asset('images/placeholder.jpg') }}" class="h-48 w-full object-cover" alt="Placeholder">
+                    @endif
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">{{ get_the_title($post->ID) }}</h3>
+                        <p class="text-sm text-gray-600 flex-grow leading-relaxed mb-4">
+                            {{ get_the_excerpt($post->ID) }}
+                        </p>
+                        <div class="pt-4 border-t">
+                            <a href="{{ get_permalink($post->ID) }}" class="text-[#4E8D7C] hover:text-[#3D7465] font-semibold text-sm inline-flex items-center group">
+                                Read more 
+                                <i class="bi bi-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
                         </div>
-                        <p class="text-xs text-gray-500 mt-1">Start with your country code (e.g. +62 for Indonesia)</p>
                     </div>
-
-                    <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-600">Message</label>
-                        <textarea rows="5"
-                            class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
-                            placeholder="Write your message..." required></textarea>
-                    </div>
-
-                    <button type="submit"
-                        class="w-full bg-[#4E8D7C] hover:bg-[#3D7465] text-white font-semibold py-3 rounded-lg transition">
-                        Send Message
-                    </button>
-                </form>
-
-
-                <!-- Social Links -->
-                <div class="mt-10 flex justify-center text-2xl gap-2">
-                    <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i
-                            class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-pink-500 hover:text-pink-700 transition"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-black hover:text-gray-700 transition"><i class="fab fa-tiktok"></i></a>
                 </div>
-            </div>
-        </section>
+                @endforeach
 
-        <!-- Google Map -->
-        <section class="rounded-2xl overflow-hidden shadow-xl h-96 md:h-auto">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3792.3198632678145!2d113.22432686142886!3d-7.751219828458645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ad6596540515%3A0x27d2c747b932df7f!2sHOLIDAY%20BROMO%20TRAVELLER!5e0!3m2!1sen!2sid!4v1760508163044!5m2!1sen!2sid"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-  </section>
+                @php wp_reset_postdata(); @endphp
+            </div>
+        </div>
+    </section>
 
 </article>
 @endsection
