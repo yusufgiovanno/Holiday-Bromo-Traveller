@@ -6,7 +6,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <main class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <main class="max-w-[1440px] mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Contact Form -->
         <section>
             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
@@ -15,28 +15,49 @@
                     <div>
                         <label class="block text-sm font-medium mb-1 text-gray-600">Full Name</label>
                         <input type="text"
-                            class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+                            class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
                             placeholder="John Doe" required>
                     </div>
+
                     <div>
                         <label class="block text-sm font-medium mb-1 text-gray-600">Email</label>
                         <input type="email"
-                            class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+                            class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
                             placeholder="you@example.com" required>
                     </div>
+
+                    <!-- WhatsApp Number -->
+                    <div>
+                        <label class="block text-sm font-medium mb-1 text-gray-600">WhatsApp Number</label>
+                        <div class="flex rounded-lg border border-gray-300 focus-within:ring-1 focus-within:ring-indigo-500 overflow-hidden">
+                            <span class="bg-gray-100 text-gray-600 text-sm px-3 flex items-center select-none">+62</span>
+                            <input
+                                type="tel"
+                                name="whatsapp"
+                                placeholder="812-3456-7890"
+                                class="w-full p-2 text-sm focus:outline-none"
+                                required
+                            >
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Start with your country code (e.g. +62 for Indonesia)</p>
+                    </div>
+
                     <div>
                         <label class="block text-sm font-medium mb-1 text-gray-600">Message</label>
-                        <textarea rows="5" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        <textarea rows="5"
+                            class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
                             placeholder="Write your message..." required></textarea>
                     </div>
+
                     <button type="submit"
-                        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition">
+                        class="w-full bg-[#4E8D7C] hover:bg-[#3D7465] text-white font-semibold py-3 rounded-lg transition">
                         Send Message
                     </button>
                 </form>
 
+
                 <!-- Social Links -->
-                <div class="mt-10 flex justify-center space-x-6 text-2xl">
+                <div class="mt-10 flex justify-center text-2xl gap-2">
                     <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i
                             class="fab fa-facebook"></i></a>
                     <a href="#" class="text-pink-500 hover:text-pink-700 transition"><i
