@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-    <section class="max-w-[1440px] mx-auto px-4 mt-8">
+    <section class="max-w-[1440px] mx-auto py-16">
         <div class="relative overflow-hidden rounded-xl">
             <div 
             class="absolute inset-0 bg-cover bg-center opacity-40 z-0" 
@@ -94,7 +94,7 @@
         </div>
     </section>
 
-    <section class="max-w-[1440px] mx-auto px-4 mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 py-16">
         <div class="bg-gradient-to-br from-[#4E8D7C]/5 to-[#4E8D7C]/10 border-l-4 border-[#4E8D7C] rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow">
             <div class="w-12 h-12 rounded-full bg-[#4E8D7C] flex items-center justify-center mb-4">
                 <i class="bi bi-people text-white text-2xl"></i>
@@ -118,7 +118,7 @@
         </div>
     </section>
 
-    <section class="max-w-[1440px] mx-auto px-4 mt-20">
+    <section class="max-w-[1440px] mx-auto py-16">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-8">
                 <h4 class="font-bold text-2xl mb-6 text-gray-800">How It Works</h4>
@@ -169,7 +169,7 @@
         </div>
     </section>
 
-    <section class="bg-gradient-to-b from-gray-50 to-white py-16 mt-20">
+    <section class="bg-gradient-to-b from-gray-50 to-white py-16">
         <div class="max-w-[1440px] mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-3">What Travelers Say</h2>
@@ -237,7 +237,7 @@
         </div>
     </section>
 
-    <section class="max-w-[1440px] mx-auto px-4 py-16">
+    <section class="max-w-[1440px] mx-auto py-16">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-800 mb-3">Gallery</h2>
             <p class="text-gray-600">Captured moments from Mount Bromo</p>
