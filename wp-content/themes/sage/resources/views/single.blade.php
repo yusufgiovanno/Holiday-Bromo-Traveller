@@ -30,8 +30,8 @@
     {!! get_the_content() !!}
   </section>
 
-  <section class="bg-gray-50 py-16">
-        <div class="max-w-[1440px] mx-auto px-4">
+  <section class="bg-gray-50">
+        <div class="max-w-[1440px] mx-auto">
             <div class="text-left mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-3">Other News</h2>
             </div>
