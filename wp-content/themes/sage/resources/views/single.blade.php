@@ -32,7 +32,9 @@
 
   <section class="bg-gray-50 py-16">
         <div class="max-w-[1440px] mx-auto px-4">
-
+            <div class="text-left mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-3">Other News</h2>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @php
                 $latest_posts = get_posts([
