@@ -170,7 +170,7 @@
     </section>
 
     <section class="bg-gradient-to-b from-gray-50 to-white py-16">
-        <div class="max-w-[1440px] mx-auto px-4">
+        <div class="max-w-[1440px] mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-3">What Travelers Say</h2>
                 <p class="text-gray-600">Real experiences from our guests</p>
