@@ -6,32 +6,37 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="max-w-[1440px] mx-auto px-4 py-12">
+<section class="max-w-[1440px] mx-auto px-4">
   
-    <!-- Page Header -->
-    <header class="text-center mb-10">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Travel Stories & Guides</h1>
-        <p class="text-gray-500 text-sm md:text-base">Insights, inspiration, and recent adventures from Mount Bromo and beyond</p>
-    </header>
+    
+    <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-12">
+        <div class="max-w-[1440px] mx-auto px-4">
+            <div class="text-center mb-8 gap-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Blog</h1>
+                <p class="text-gray-600"><a href="/">Home</a> / <span class="text-[#4E8D7C]">Blog</span></p>
+                <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="mb-10 pt-10 flex justify-center">
+                    <input 
+                        type="text" 
+                        name="s" 
+                        placeholder="Search articles..." 
+                        value="<?php echo get_search_query(); ?>"
+                        class="w-full max-w-md border border-gray-300 rounded-l-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4E8D7C]" 
+                    />
+                    <button 
+                        type="submit" 
+                        class="bg-[#4E8D7C] hover:bg-[#3D7465] text-white px-4 rounded-r-md transition">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Search Bar -->
-    <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="mb-10 flex justify-center">
-        <input 
-            type="text" 
-            name="s" 
-            placeholder="Search articles..." 
-            value="<?php echo get_search_query(); ?>"
-            class="w-full max-w-md border border-gray-300 rounded-l-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4E8D7C]" 
-        />
-        <button 
-            type="submit" 
-            class="bg-[#4E8D7C] hover:bg-[#3D7465] text-white px-4 rounded-r-md transition">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </form>
 
     <!-- Featured + Posts Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
       
         <!-- Featured Post -->
         <?php
