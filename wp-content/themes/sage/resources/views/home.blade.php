@@ -160,7 +160,7 @@ $galleries = DB::table('wp_posts')
                 <h2 class="font-bold text-3xl mb-8 text-gray-800">How It Works</h2>
                 <div class="space-y-8">
                     <div class="flex items-start group">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] text-white flex items-center justify-center font-bold text-xl mr-6 group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] text-white flex items-center justify-center font-bold text-xl mr-6 group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
                             1
                         </div>
                         <div>
@@ -169,7 +169,7 @@ $galleries = DB::table('wp_posts')
                         </div>
                     </div>
                     <div class="flex items-start group">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] text-white flex items-center justify-center font-bold text-xl mr-6 group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] text-white flex items-center justify-center font-bold text-xl mr-6 group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
                             2
                         </div>
                         <div>
@@ -178,7 +178,7 @@ $galleries = DB::table('wp_posts')
                         </div>
                     </div>
                     <div class="flex items-start group">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] text-white flex items-center justify-center font-bold text-xl mr-6 group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] text-white flex items-center justify-center font-bold text-xl mr-6 group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
                             3
                         </div>
                         <div>
