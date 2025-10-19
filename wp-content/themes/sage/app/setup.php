@@ -153,3 +153,28 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+add_action('wp_enqueue_scripts', function () {
+    // Enqueue your main script
+    wp_enqueue_script(
+        'theme-js',
+        asset('/assets/app-vnfa-22_.js')->uri(),
+        ['jquery'], // dependencies
+        null,
+        true // load in footer
+    );
+
+    // Pass global vars to JS
+    wp_localize_script('theme-js', 'vars', [
+        'ajaxUrl'   => admin_url('admin-ajax.php'),
+        'ajax'      => [
+            'planner' => [
+                'action' => 'submit_planner_form',
+                '_token' => \wp_create_nonce('planner_form_nonce'),
+            ]
+        ]
+
+
+
+    ]);
+});

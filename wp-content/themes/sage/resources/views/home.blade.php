@@ -102,11 +102,11 @@ $galleries = DB::table('wp_posts')
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="md:col-span-2">
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Travel Date</label>
-                            <input type="date" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition" />
+                            <input type="date" name="date" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition" />
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Duration</label>
-                            <select class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
+                            <select name="duration" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
                                 <option>1 Day</option>
                                 <option>2 Days</option>
                                 <option>3+ Days</option>
@@ -114,7 +114,7 @@ $galleries = DB::table('wp_posts')
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Group Size</label>
-                            <select class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
+                            <select name="group_size" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
                                 <option>Solo Traveler</option>
                                 <option>Couple (2 people)</option>
                                 <option>Small Group (3–6)</option>
@@ -125,17 +125,17 @@ $galleries = DB::table('wp_posts')
                             <label class="block mb-2 text-sm font-semibold text-gray-700">WhatsApp Number</label>
                             <div class="flex rounded-lg border-2 border-gray-200 focus-within:ring-2 focus-within:ring-[#4E8D7C] focus-within:border-[#4E8D7C] overflow-hidden transition">
                                 <!-- <span class="bg-gray-100 text-gray-700 text-sm px-4 flex items-center font-medium">+62</span> -->
-                                <input
+                                <input name="whatsapp"
                                     type="tel"
-                                    placeholder="62 812-3456-7890"
+                                    placeholder="+62 812-3456-7890"
                                     class="w-full p-3 text-sm focus:outline-none"
                                 />
                             </div>
-                            <p class="text-xs text-gray-500 mt-2">We'll send your custom itinerary via WhatsApp</p>
+                            <p class="text-xs text-gray-500 mt-2">please also input your country code</p>
                         </div>
                         <div class="md:col-span-2">
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Email Address (Optional)</label>
-                            <input type="email" placeholder="your.email@example.com"
+                            <input type="email" name="email" placeholder="your.email@example.com"
                                 class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition" />
                         </div>
                     </div>

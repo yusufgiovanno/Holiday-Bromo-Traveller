@@ -11,6 +11,7 @@ wp-content/uploads/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/debug.log
+wp-content/plugins/
 
 # OS & IDE junk
 .DS_Store
