@@ -221,7 +221,7 @@ $galleries = DB::table('wp_posts')
             <div class="swiper testimonialSwiper pb-12">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
                             <div class="flex mb-4">
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
@@ -231,7 +231,7 @@ $galleries = DB::table('wp_posts')
                             </div>
                             <div class="mb-6 flex-grow">
                                 <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"Absolutely breathtaking sunrise experience! The guide took us to a quieter viewpoint away from the crowds, and we captured the most amazing photos. Professional service from start to finish."</p>
-                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
+                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors hidden">
                                     Read More
                                 </button>
                             </div>
@@ -248,7 +248,7 @@ $galleries = DB::table('wp_posts')
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
                             <div class="flex mb-4">
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
@@ -275,7 +275,7 @@ $galleries = DB::table('wp_posts')
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
                             <div class="flex mb-4">
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
@@ -302,7 +302,7 @@ $galleries = DB::table('wp_posts')
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
                             <div class="flex mb-4">
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
@@ -353,27 +353,39 @@ $galleries = DB::table('wp_posts')
     </section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const readMoreBtns = document.querySelectorAll('.read-more-btn');
-            
-            readMoreBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const testimonialText = this.previousElementSibling;
-                    
-                    if (testimonialText.classList.contains('expanded')) {
-                        testimonialText.classList.remove('expanded');
-                        testimonialText.classList.add('line-clamp-4');
-                        this.textContent = 'Read More';
-                    } else {
-                        testimonialText.classList.remove('line-clamp-4');
-                        testimonialText.classList.add('expanded');
-                        this.textContent = 'Show Less';
-                    }
-                });
-            });
-        });
+       
 
         document.addEventListener("DOMContentLoaded", () => {
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+
+            setTimeout(() => {
+                readMoreBtns.forEach(btn => {
+                    const testimonialText = btn.previousElementSibling;
+                    
+                    testimonialText.classList.remove('line-clamp-4');
+                    const fullHeight = testimonialText.scrollHeight;
+                    testimonialText.classList.add('line-clamp-4');
+                    const clampedHeight = testimonialText.clientHeight;
+                    
+                    if (fullHeight > clampedHeight + 5) {
+                        btn.classList.remove('hidden');
+                        
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            
+                            if (testimonialText.classList.contains('line-clamp-4')) {
+                                testimonialText.classList.remove('line-clamp-4');
+                                this.textContent = 'Show Less';
+                            } else {
+                                testimonialText.classList.add('line-clamp-4');
+                                this.textContent = 'Read More';
+                            }
+                        });
+                    } else {
+                        btn.remove();
+                    }
+                });
+            }, 150);
             const testimonialSwiper = new Swiper('.testimonialSwiper', {
                 slidesPerView: 1,
                 spaceBetween: 24,
