@@ -3,6 +3,26 @@
   Template Post Type: page
 --}}
 
+@php
+use MI\DB;
+
+$reviews = DB::table('wp_posts p')
+            ->select('p.post_title as name', 'c.meta_value as country', 'i.meta_value as impression')
+            ->leftjoin('wp_postmeta c', 'p.ID = c.post_id', ' AND ', 'c.meta_key = "_review_country"')
+            ->leftjoin('wp_postmeta i', 'p.ID = i.post_id', ' AND ', 'i.meta_key = "_review_impressions"')
+            ->where('p.post_type',   '=', 'review')
+            ->where('p.post_status', '=', 'publish')
+            ->limit('10')
+            ->orderBy('p.ID', 'DESC')
+            ->get();
+
+$galleries = get_option('gallery_images', []);
+$galleries = DB::table('wp_posts')
+            ->select('guid as src')
+            ->whereIn('ID', $galleries)
+            ->col();
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
@@ -339,5 +359,5 @@
             });
         });
     </script>
-    
+
 @endsection
