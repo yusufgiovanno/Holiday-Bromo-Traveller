@@ -20,12 +20,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="grid grid-cols-2 gap-4">
                 <div class="space-y-4">
-                    <img src="https://picsum.photos/300/400" alt="Mount Bromo Tour" class="w-full rounded-xl shadow-lg object-cover h-64">
-                    <img src="https://picsum.photos/300/300" alt="Jeep Tour" class="w-full rounded-xl shadow-lg object-cover h-64">
+                    <img src="https://picsum.photos/300/400" alt="Mount Bromo Tour" class="w-full rounded-xl shadow-lg object-cover h-156">
                 </div>
                 <div class="space-y-4">
-                    <img src="https://picsum.photos/300/350" alt="Sunrise View" class="w-full rounded-xl shadow-lg object-cover h-64">
-                    <img src="https://picsum.photos/300/350" alt="Sunrise View" class="w-full rounded-xl shadow-lg object-cover h-64">
+                    <img src="https://picsum.photos/300/400" alt="Sunrise View" class="w-full rounded-xl shadow-lg object-cover h-156">
                     <!-- <div class="bg-[#4E8D7C] rounded-xl p-6 text-white shadow-lg">
                         <h3 class="text-3xl font-bold mb-1">Award Winning</h3>
                         <p class="text-lg">Tour Operator Since 2015</p>

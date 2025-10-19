@@ -263,7 +263,39 @@ $galleries = DB::table('wp_posts')
     </section>
 
     <script>
+
+
         document.addEventListener("DOMContentLoaded", () => {
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+
+            setTimeout(() => {
+                readMoreBtns.forEach(btn => {
+                    const testimonialText = btn.previousElementSibling;
+
+                    testimonialText.classList.remove('line-clamp-4');
+                    const fullHeight = testimonialText.scrollHeight;
+                    testimonialText.classList.add('line-clamp-4');
+                    const clampedHeight = testimonialText.clientHeight;
+
+                    if (fullHeight > clampedHeight + 5) {
+                        btn.classList.remove('hidden');
+
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+
+                            if (testimonialText.classList.contains('line-clamp-4')) {
+                                testimonialText.classList.remove('line-clamp-4');
+                                this.textContent = 'Show Less';
+                            } else {
+                                testimonialText.classList.add('line-clamp-4');
+                                this.textContent = 'Read More';
+                            }
+                        });
+                    } else {
+                        btn.remove();
+                    }
+                });
+            }, 150);
             const testimonialSwiper = new Swiper('.testimonialSwiper', {
                 slidesPerView: 1,
                 spaceBetween: 24,
