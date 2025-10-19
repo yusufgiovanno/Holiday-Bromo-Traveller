@@ -1,8 +1,13 @@
-<footer class="border-t mt-16 bg-gray-50">
+<footer class="border-t bg-gray-50">
   <div class="max-w-[1440px] mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700">
 
     <div>
-      <h5 class="font-bold text-lg mb-3 text-gray-900">Bromo Travel Agency</h5>
+      <img 
+        src="{{ asset('assets/logo_transparent-g68EGczP.png') }}" 
+        alt="Bromo Travel Agency Logo" 
+        class="h-24 mb-8"
+      />
+
       <p class="text-sm leading-relaxed">
         Your trusted partner for unforgettable Bromo and East Java adventures.
         We offer customized travel experiences, local guides, and seamless trip planning.

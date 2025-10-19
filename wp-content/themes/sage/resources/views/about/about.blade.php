@@ -69,13 +69,10 @@
                         <i class="bi bi-facebook text-gray-600 hover:text-[#4E8D7C]"></i>
                     </a>
                     <a href="#" class="w-10 h-10 border-2 border-gray-300 hover:border-[#4E8D7C] rounded-lg flex items-center justify-center transition">
-                        <i class="bi bi-twitter text-gray-600 hover:text-[#4E8D7C]"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 border-2 border-gray-300 hover:border-[#4E8D7C] rounded-lg flex items-center justify-center transition">
                         <i class="bi bi-instagram text-gray-600 hover:text-[#4E8D7C]"></i>
                     </a>
                     <a href="#" class="w-10 h-10 border-2 border-gray-300 hover:border-[#4E8D7C] rounded-lg flex items-center justify-center transition">
-                        <i class="bi bi-linkedin text-gray-600 hover:text-[#4E8D7C]"></i>
+                        <i class="bi bi-tiktok text-gray-600 hover:text-[#4E8D7C]"></i>
                     </a>
                 </div>
             </div>
@@ -249,7 +246,7 @@
         </div>
     </section>
     <section class="py-16">
-        <div class="max-w-[1440px] mx-auto py-8">
+        <div class="max-w-[1440px] mx-auto px-4 py-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-3">Gallery</h2>
                 <p class="text-gray-600">Captured moments from Mount Bromo</p>
