@@ -229,9 +229,14 @@ $galleries = DB::table('wp_posts')
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                             </div>
-                            <p class="text-gray-700 leading-relaxed mb-6 flex-grow text-lg">"Absolutely breathtaking sunrise experience! The guide took us to a quieter viewpoint away from the crowds, and we captured the most amazing photos. Professional service from start to finish."</p>
+                            <div class="mb-6 flex-grow">
+                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"Absolutely breathtaking sunrise experience! The guide took us to a quieter viewpoint away from the crowds, and we captured the most amazing photos. Professional service from start to finish."</p>
+                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
+                                    Read More
+                                </button>
+                            </div>
                             <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] flex items-center justify-center mr-4">
+                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
                                     <span class="font-bold text-white text-xl">V</span>
                                 </div>
                                 <div>
@@ -251,9 +256,14 @@ $galleries = DB::table('wp_posts')
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                             </div>
-                            <p class="text-gray-700 leading-relaxed mb-6 flex-grow text-lg">"The private jeep made everything so comfortable and easy. Our driver was knowledgeable and patient. Highly recommended for photographers who want to take their time!"</p>
+                            <div class="mb-6 flex-grow">
+                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"The private jeep made everything so comfortable and easy. Our driver was knowledgeable and patient. Highly recommended for photographers who want to take their time!"</p>
+                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
+                                    Read More
+                                </button>
+                            </div>
                             <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] flex items-center justify-center mr-4">
+                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
                                     <span class="font-bold text-white text-xl">J</span>
                                 </div>
                                 <div>
@@ -273,9 +283,14 @@ $galleries = DB::table('wp_posts')
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                             </div>
-                            <p class="text-gray-700 leading-relaxed mb-6 flex-grow text-lg">"Flexible plan that adapted to our needs perfectly. Amazing local food recommendations and a very knowledgeable guide who shared fascinating stories about the region."</p>
+                            <div class="mb-6 flex-grow">
+                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"Flexible plan that adapted to our needs perfectly. Amazing local food recommendations and a very knowledgeable guide who shared fascinating stories about the region."</p>
+                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
+                                    Read More
+                                </button>
+                            </div>
                             <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] flex items-center justify-center mr-4">
+                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
                                     <span class="font-bold text-white text-xl">J</span>
                                 </div>
                                 <div>
@@ -295,9 +310,14 @@ $galleries = DB::table('wp_posts')
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                                 <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
                             </div>
-                            <p class="text-gray-700 leading-relaxed mb-6 flex-grow text-lg">"Best decision for our honeymoon! The team organized everything perfectly. The sunrise at Mount Bromo was magical, and the whole experience exceeded our expectations."</p>
+                            <div class="mb-6 flex-grow">
+                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"Best decision for our honeymoon! The team organized everything perfectly. The sunrise at Mount Bromo was magical, and the whole experience exceeded our expectations."</p>
+                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
+                                    Read More
+                                </button>
+                            </div>
                             <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] flex items-center justify-center mr-4">
+                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
                                     <span class="font-bold text-white text-xl">S</span>
                                 </div>
                                 <div>
@@ -333,6 +353,26 @@ $galleries = DB::table('wp_posts')
     </section>
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+            
+            readMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const testimonialText = this.previousElementSibling;
+                    
+                    if (testimonialText.classList.contains('expanded')) {
+                        testimonialText.classList.remove('expanded');
+                        testimonialText.classList.add('line-clamp-4');
+                        this.textContent = 'Read More';
+                    } else {
+                        testimonialText.classList.remove('line-clamp-4');
+                        testimonialText.classList.add('expanded');
+                        this.textContent = 'Show Less';
+                    }
+                });
+            });
+        });
+
         document.addEventListener("DOMContentLoaded", () => {
             const testimonialSwiper = new Swiper('.testimonialSwiper', {
                 slidesPerView: 1,
