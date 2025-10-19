@@ -30,12 +30,12 @@ $galleries = DB::table('wp_posts')
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <section class="relative h-[600px] md:h-[700px] overflow-hidden">
-        <div 
-            class="absolute inset-0 bg-cover bg-center" 
+        <div
+            class="absolute inset-0 bg-cover bg-center"
             style="background-image: url('{{ asset('assets/mount-CoiR9lrY.png') }}');">
         </div>
         <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-transparent"></div>
-        
+
         <div class="relative max-w-[1440px] mx-auto px-4 h-full flex items-center">
             <div class="max-w-2xl text-white space-y-6">
                 <div class="inline-block bg-[#4E8D7C]/20 backdrop-blur-sm px-4 py-2 rounded-full border border-[#4E8D7C]/30 mb-4">
@@ -200,7 +200,7 @@ $galleries = DB::table('wp_posts')
                     </p>
                     <a href="https://wa.me/628819859543"
                         class="bg-white hover:bg-gray-100 text-[#4E8D7C] w-full py-4 rounded-lg flex justify-center items-center gap-3 font-bold transition-all shadow-lg hover:shadow-xl">
-                        <i class="bi bi-whatsapp text-2xl"></i> 
+                        <i class="bi bi-whatsapp text-2xl"></i>
                         <span>Chat on WhatsApp</span>
                     </a>
                     <p class="text-white/70 text-sm text-center mt-4">Available 24/7 for your convenience</p>
@@ -220,115 +220,25 @@ $galleries = DB::table('wp_posts')
 
             <div class="swiper testimonialSwiper pb-12">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
-                            <div class="flex mb-4">
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                            </div>
-                            <div class="mb-6 flex-grow">
-                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"Absolutely breathtaking sunrise experience! The guide took us to a quieter viewpoint away from the crowds, and we captured the most amazing photos. Professional service from start to finish."</p>
-                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors hidden">
-                                    Read More
-                                </button>
-                            </div>
-                            <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
-                                    <span class="font-bold text-white text-xl">V</span>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-800">Vanno</p>
-                                    <p class="text-sm text-gray-500">🇮🇩 Indonesia</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="swiper-slide">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
-                            <div class="flex mb-4">
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                            </div>
-                            <div class="mb-6 flex-grow">
-                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"The private jeep made everything so comfortable and easy. Our driver was knowledgeable and patient. Highly recommended for photographers who want to take their time!"</p>
-                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
-                                    Read More
-                                </button>
-                            </div>
-                            <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
-                                    <span class="font-bold text-white text-xl">J</span>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-800">John Doe</p>
-                                    <p class="text-sm text-gray-500">🇨🇦 Canada</p>
+                    @foreach($reviews as $review)
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
+                                <p class="text-gray-700 leading-relaxed mb-6 flex-grow text-lg">"{{ $review->impression ?? '' }}."</p>
+                                <div class="flex items-center pt-6 border-t border-gray-100">
+                                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] flex items-center justify-center mr-4">
+                                        <span class="font-bold text-white text-xl">{{ Str::upper($review->name[0] ?? '') }}</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-800">{{ $review->name ?? '' }}</p>
+                                        <p class="text-sm text-gray-500">{{ $review->country ?? '' }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
-                            <div class="flex mb-4">
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                            </div>
-                            <div class="mb-6 flex-grow">
-                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"Flexible plan that adapted to our needs perfectly. Amazing local food recommendations and a very knowledgeable guide who shared fascinating stories about the region."</p>
-                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
-                                    Read More
-                                </button>
-                            </div>
-                            <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
-                                    <span class="font-bold text-white text-xl">J</span>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-800">Jane Smith</p>
-                                    <p class="text-sm text-gray-500">🇧🇪 Belgium</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
-                            <div class="flex mb-4">
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                                <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
-                            </div>
-                            <div class="mb-6 flex-grow">
-                                <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">"Best decision for our honeymoon! The team organized everything perfectly. The sunrise at Mount Bromo was magical, and the whole experience exceeded our expectations."</p>
-                                <button class="text-[#4E8D7C] hover:text-[#3D7465] text-sm font-semibold mt-2 read-more-btn transition-colors">
-                                    Read More
-                                </button>
-                            </div>
-                            <div class="flex items-center pt-6 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
-                                    <span class="font-bold text-white text-xl">S</span>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-800">Sarah & Mike</p>
-                                    <p class="text-sm text-gray-500">🇦🇺 Australia</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                
+
                 <div class="swiper-pagination !bottom-0"></div>
             </div>
         </div>
@@ -353,7 +263,7 @@ $galleries = DB::table('wp_posts')
     </section>
 
     <script>
-       
+
 
         document.addEventListener("DOMContentLoaded", () => {
             const readMoreBtns = document.querySelectorAll('.read-more-btn');
@@ -361,18 +271,18 @@ $galleries = DB::table('wp_posts')
             setTimeout(() => {
                 readMoreBtns.forEach(btn => {
                     const testimonialText = btn.previousElementSibling;
-                    
+
                     testimonialText.classList.remove('line-clamp-4');
                     const fullHeight = testimonialText.scrollHeight;
                     testimonialText.classList.add('line-clamp-4');
                     const clampedHeight = testimonialText.clientHeight;
-                    
+
                     if (fullHeight > clampedHeight + 5) {
                         btn.classList.remove('hidden');
-                        
+
                         btn.addEventListener('click', function(e) {
                             e.preventDefault();
-                            
+
                             if (testimonialText.classList.contains('line-clamp-4')) {
                                 testimonialText.classList.remove('line-clamp-4');
                                 this.textContent = 'Show Less';
