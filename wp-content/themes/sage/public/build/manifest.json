@@ -20,7 +20,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-D7QRmh6B.css",
+    "file": "assets/app-M7rkmJuQ.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "names": [
@@ -28,12 +28,16 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-CAm2HZC3.css",
+    "file": "assets/editor-pYjwbiVE.css",
     "src": "resources/css/editor.css",
     "isEntry": true,
     "names": [
       "editor.css"
     ]
+  },
+  "resources/images/logo_transparent.png": {
+    "file": "assets/logo_transparent-g68EGczP.png",
+    "src": "resources/images/logo_transparent.png"
   },
   "resources/images/mount.png": {
     "file": "assets/mount-CoiR9lrY.png",

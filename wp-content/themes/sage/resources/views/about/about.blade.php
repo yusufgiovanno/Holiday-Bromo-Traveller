@@ -246,7 +246,7 @@
         </div>
     </section>
     <section class="py-16">
-        <div class="max-w-[1440px] mx-auto py-8">
+        <div class="max-w-[1440px] mx-auto px-4 py-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-3">Gallery</h2>
                 <p class="text-gray-600">Captured moments from Mount Bromo</p>

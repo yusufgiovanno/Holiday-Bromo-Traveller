@@ -85,7 +85,7 @@
         </section>
     </main>
 
-        <section class="max-w-[1440px] mx-auto py-8">
+        <section class="max-w-[1440px] mx-auto px-4 py-8">
             <div class="columns-2 md:columns-3 lg:columns-4 [column-gap:1rem]">
                 <a href="https://picsum.photos/1200/800" class="glightbox block mb-4" data-gallery="gallery">
                     <img src="https://picsum.photos/400/500" alt="Gallery 1"
@@ -117,7 +117,7 @@
                 </a>
             </div>
         </section>
-        <script>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
         const lightbox = GLightbox({ selector: '.glightbox' });
         });

@@ -8,9 +8,11 @@
 <nav class="sticky top-0 z-50 bg-white shadow-sm">
     <div class="max-w-[1440px] mx-auto flex justify-between items-center px-4 py-4">
         <a href="/" class="brand-title">
-            <p class="font-bold text-xl">Holiday Bromo Traveller<br>
-                <small class="font-light text-gray-500 text-sm">Tailored trips to Mount Bromo</small>
-            </p>
+            <img 
+            src="{{ asset('assets/logo_transparent-g68EGczP.png') }}" 
+            alt="Bromo Travel Agency Logo" 
+            class="h-20"
+        />
         </a>
         <button id="menuBtn" class="lg:hidden text-2xl">
             <i class="bi bi-list"></i>
