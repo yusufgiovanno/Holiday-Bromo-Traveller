@@ -6,8 +6,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-16">
+            <div class="max-w-[1440px] mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Contact Us</h1>
+                    <p class="text-gray-600"><a href="/">Home</a> / <span class="text-[#4E8D7C]">Contact</span></p>
+                </div>
+            </div>
+    </section>
     <main class="max-w-[1440px] mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Contact Form -->
+        
         <section>
             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
                 <h2 class="text-2xl font-semibold mb-8 text-gray-700">Send a Message</h2>
