@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<a href="https://example.com" class="float" target="_blank">
-    <i class="fa fa-whatsapp my-float"></i>
+<a href="https://example.com" class="float flex items-center justify-center" target="_blank">
+    <i class="bi bi-whatsapp "></i>
 </a>
 <nav class="sticky top-0 z-50 bg-white shadow-sm">
     <div class="max-w-[1440px] mx-auto flex justify-between items-center px-4 py-4">

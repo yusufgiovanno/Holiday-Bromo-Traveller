@@ -251,11 +251,9 @@
         </div>
     </section>
     <section class="py-16">
-        <div class="max-w-[1440px] mx-auto px-4">
+        <div class="max-w-[1440px] mx-auto py-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-3">
-                    Our beautiful <span class="text-[#4E8D7C]">GALLERY</span>
-                </h2>
+                <h2 class="text-3xl font-bold text-gray-800 mb-3">Gallery</h2>
                 <p class="text-gray-600">Captured moments from Mount Bromo</p>
             </div>
 
@@ -290,7 +288,10 @@
                 </a>
             </div>
         </div>
-
-        </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const lightbox = GLightbox({ selector: '.glightbox' });
+        });
+    </script>
 @endsection
