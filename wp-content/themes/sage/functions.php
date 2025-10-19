@@ -13,11 +13,13 @@ use Roots\Acorn\Application;
 |
 */
 
-if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
+if (! file_exists($composer = get_template_directory() . '/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
 require $composer;
+
+require __DIR__ . '/app/autoload.php';
 
 /*
 |--------------------------------------------------------------------------

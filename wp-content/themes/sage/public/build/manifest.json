@@ -20,7 +20,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CdTQnyGP.css",
+    "file": "assets/app-D7QRmh6B.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "names": [
@@ -28,7 +28,7 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-Bhooe6fu.css",
+    "file": "assets/editor-CAm2HZC3.css",
     "src": "resources/css/editor.css",
     "isEntry": true,
     "names": [

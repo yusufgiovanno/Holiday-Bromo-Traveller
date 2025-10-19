@@ -3,6 +3,26 @@
   Template Post Type: page
 --}}
 
+@php
+use MI\DB;
+
+$reviews = DB::table('wp_posts p')
+            ->select('p.post_title as name', 'c.meta_value as country', 'i.meta_value as impression')
+            ->leftjoin('wp_postmeta c', 'p.ID = c.post_id', ' AND ', 'c.meta_key = "_review_country"')
+            ->leftjoin('wp_postmeta i', 'p.ID = i.post_id', ' AND ', 'i.meta_key = "_review_impressions"')
+            ->where('p.post_type',   '=', 'review')
+            ->where('p.post_status', '=', 'publish')
+            ->limit('10')
+            ->orderBy('p.ID', 'DESC')
+            ->get();
+
+$galleries = get_option('gallery_images', []);
+$galleries = DB::table('wp_posts')
+            ->select('guid as src')
+            ->whereIn('ID', $galleries)
+            ->col();
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
@@ -11,14 +31,14 @@
 
     <section class="max-w-[1440px] mx-auto py-8">
         <div class="relative overflow-hidden rounded-xl">
-            <div 
-            class="absolute inset-0 bg-cover bg-center opacity-40 z-0" 
+            <div
+            class="absolute inset-0 bg-cover bg-center opacity-40 z-0"
             style="background-image: url('{{ asset('assets/mount-CoiR9lrY.png') }}');">
             </div>
 
             <div class="relative bg-green-900/40 backdrop-blur-sm rounded-xl p-6 md:p-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                
+
                 <header class="text-center md:text-left text-white space-y-4">
                 <h1 class="text-4xl font-bold leading-tight">Sunrise at Mount Bromo — Yours, personalized</h1>
                 <h6 class="text-lg font-light">
@@ -176,63 +196,20 @@
                 <p class="text-gray-600">Real experiences from our guests</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                @foreach($reviews as $review)
                 <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col h-full">
-                    <div class="flex mb-3">
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                    </div>
-                    <p class="font-medium text-gray-700 mb-4 flex-grow">"Absolutely breathtaking sunrise. The guide took us to a quieter viewpoint and we had the best photos."</p>
+                    <p class="font-medium text-gray-700 mb-4 flex-grow">"{{ $review->impression ?? '' }}"</p>
                     <div class="flex items-center pt-4 border-t">
                         <div class="w-10 h-10 rounded-full bg-[#4E8D7C]/20 flex items-center justify-center mr-3">
-                            <span class="font-bold text-[#4E8D7C]">V</span>
+                            <span class="font-bold text-[#4E8D7C]">{{ Str::upper($review->name[0] ?? '') }}</span>
                         </div>
                         <div>
-                            <p class="font-semibold text-sm text-gray-800">Vanno</p>
-                            <p class="text-xs text-gray-500">Indonesia</p>
+                            <p class="font-semibold text-sm text-gray-800">{{ $review->name ?? '' }}</p>
+                            <p class="text-xs text-gray-500">{{ $review->country ?? '' }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col h-full">
-                    <div class="flex mb-3">
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                    </div>
-                    <p class="font-medium text-gray-700 mb-4 flex-grow">"Private jeep made everything easy. Highly recommended for photographers."</p>
-                    <div class="flex items-center pt-4 border-t">
-                        <div class="w-10 h-10 rounded-full bg-[#4E8D7C]/20 flex items-center justify-center mr-3">
-                            <span class="font-bold text-[#4E8D7C]">J</span>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-sm text-gray-800">John Doe</p>
-                            <p class="text-xs text-gray-500">Canada</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col h-full">
-                    <div class="flex mb-3">
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                        <i class="bi bi-star-fill text-yellow-400"></i>
-                    </div>
-                    <p class="font-medium text-gray-700 mb-4 flex-grow">"Flexible plan, great local food, and a very knowledgeable guide."</p>
-                    <div class="flex items-center pt-4 border-t">
-                        <div class="w-10 h-10 rounded-full bg-[#4E8D7C]/20 flex items-center justify-center mr-3">
-                            <span class="font-bold text-[#4E8D7C]">J</span>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-sm text-gray-800">Jane Doe</p>
-                            <p class="text-xs text-gray-500">Belgium</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -244,34 +221,12 @@
         </div>
 
         <div class="columns-2 md:columns-3 lg:columns-4 [column-gap:1rem]">
-            <a href="https://picsum.photos/1200/800" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/500" alt="Gallery 1"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/700" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/300" alt="Gallery 2"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/900" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/600" alt="Gallery 3"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/750" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/400" alt="Gallery 4"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/850" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/550" alt="Gallery 5"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/820" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/450" alt="Gallery 6"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/880" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/350" alt="Gallery 7"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
+            @foreach($galleries as $key => $gallery)
+                <a href="#" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="{{ $gallery }}" alt="Gallery {{ $key }}"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+            @endforeach
         </div>
     </section>
 
@@ -286,5 +241,5 @@
         const lightbox = GLightbox({ selector: '.glightbox' });
         });
     </script>
-    
+
 @endsection
