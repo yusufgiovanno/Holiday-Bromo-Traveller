@@ -30,11 +30,11 @@
                     <div>
                         <label class="block text-sm font-medium mb-1 text-gray-600">WhatsApp Number</label>
                         <div class="flex rounded-lg border border-gray-300 focus-within:ring-1 focus-within:ring-indigo-500 overflow-hidden">
-                            <span class="bg-gray-100 text-gray-600 text-sm px-3 flex items-center select-none">+62</span>
+                            <!-- <span class="bg-gray-100 text-gray-600 text-sm px-3 flex items-center select-none">+62</span> -->
                             <input
                                 type="tel"
                                 name="whatsapp"
-                                placeholder="812-3456-7890"
+                                placeholder="+62 812-3456-7890"
                                 class="w-full p-2 text-sm focus:outline-none"
                                 required
                             >
@@ -76,38 +76,43 @@
         </section>
     </main>
 
-     <section class="max-w-[1440px] mx-auto px-4 pb-16">
-        <div class="columns-2 md:columns-3 lg:columns-4 [column-gap:1rem]">
-            <a href="https://picsum.photos/1200/800" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/500" alt="Gallery 1"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/700" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/300" alt="Gallery 2"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/900" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/600" alt="Gallery 3"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/750" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/400" alt="Gallery 4"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/850" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/550" alt="Gallery 5"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/820" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/450" alt="Gallery 6"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-            <a href="https://picsum.photos/1200/880" class="glightbox block mb-4" data-gallery="gallery">
-                <img src="https://picsum.photos/400/350" alt="Gallery 7"
-                    class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-            </a>
-        </div>
-    </section>
+        <section class="max-w-[1440px] mx-auto py-8">
+            <div class="columns-2 md:columns-3 lg:columns-4 [column-gap:1rem]">
+                <a href="https://picsum.photos/1200/800" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="https://picsum.photos/400/500" alt="Gallery 1"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+                <a href="https://picsum.photos/1200/700" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="https://picsum.photos/400/300" alt="Gallery 2"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+                <a href="https://picsum.photos/1200/900" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="https://picsum.photos/400/600" alt="Gallery 3"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+                <a href="https://picsum.photos/1200/750" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="https://picsum.photos/400/400" alt="Gallery 4"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+                <a href="https://picsum.photos/1200/850" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="https://picsum.photos/400/550" alt="Gallery 5"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+                <a href="https://picsum.photos/1200/820" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="https://picsum.photos/400/450" alt="Gallery 6"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+                <a href="https://picsum.photos/1200/880" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="https://picsum.photos/400/350" alt="Gallery 7"
+                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
+                </a>
+            </div>
+        </section>
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const lightbox = GLightbox({ selector: '.glightbox' });
+        });
+    </script>
     {{--
     <section class="max-w-4xl mx-auto px-4 pb-20">
         <h2 class="text-2xl font-semibold mb-6 text-center text-gray-700">Watch Our Video</h2>
