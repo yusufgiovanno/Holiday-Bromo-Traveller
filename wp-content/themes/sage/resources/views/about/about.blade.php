@@ -69,13 +69,10 @@
                         <i class="bi bi-facebook text-gray-600 hover:text-[#4E8D7C]"></i>
                     </a>
                     <a href="#" class="w-10 h-10 border-2 border-gray-300 hover:border-[#4E8D7C] rounded-lg flex items-center justify-center transition">
-                        <i class="bi bi-twitter text-gray-600 hover:text-[#4E8D7C]"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 border-2 border-gray-300 hover:border-[#4E8D7C] rounded-lg flex items-center justify-center transition">
                         <i class="bi bi-instagram text-gray-600 hover:text-[#4E8D7C]"></i>
                     </a>
                     <a href="#" class="w-10 h-10 border-2 border-gray-300 hover:border-[#4E8D7C] rounded-lg flex items-center justify-center transition">
-                        <i class="bi bi-linkedin text-gray-600 hover:text-[#4E8D7C]"></i>
+                        <i class="bi bi-tiktok text-gray-600 hover:text-[#4E8D7C]"></i>
                     </a>
                 </div>
             </div>
