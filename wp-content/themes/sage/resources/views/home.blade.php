@@ -222,21 +222,46 @@ $galleries = DB::table('wp_posts')
                 <div class="swiper-wrapper">
 
                     @foreach($reviews as $review)
+                        @php
+                            $review = is_array($review) ? (object)$review : $review;
+
+                            $rating = $review->rating ?? 5;
+                            $impression = $review->impression ?? "Absolutely breathtaking sunrise experience! The guide took us to a quieter viewpoint away from the crowds, and we captured the most amazing photos. Professional service from start to finish.";
+                            $name = $review->name ?? "Vanno";
+                            $country = $review->country ?? "🇮🇩 Indonesia";
+                            $initial = Str::upper($name[0] ?? 'V');
+                        @endphp
+
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
-                                <p class="text-gray-700 leading-relaxed mb-6 flex-grow text-lg">"{{ $review->impression ?? '' }}."</p>
+                            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col" style="min-height: 360px;">
+                                <div class="flex mb-4">
+                                    @for($i = 0; $i < $rating; $i++)
+                                        <i class="bi bi-star-fill text-yellow-400 text-xl"></i>
+                                    @endfor
+                                    @for($i = $rating; $i < 5; $i++)
+                                        <i class="bi bi-star text-gray-300 text-xl"></i>
+                                    @endfor
+                                </div>
+
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-700 leading-relaxed text-lg testimonial-text line-clamp-4 transition-all duration-300">
+                                        "{{ $impression }}"
+                                    </p>
+                                </div>
+
                                 <div class="flex items-center pt-6 border-t border-gray-100">
-                                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#4E8D7C] to-[#3D7465] flex items-center justify-center mr-4">
-                                        <span class="font-bold text-white text-xl">{{ Str::upper($review->name[0] ?? '') }}</span>
+                                    <div class="w-14 h-14 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(to bottom right, #4E8D7C, #3D7465);">
+                                        <span class="font-bold text-white text-xl">{{ $initial }}</span>
                                     </div>
                                     <div>
-                                        <p class="font-bold text-gray-800">{{ $review->name ?? '' }}</p>
-                                        <p class="text-sm text-gray-500">{{ $review->country ?? '' }}</p>
+                                        <p class="font-bold text-gray-800">{{ $name }}</p>
+                                        <p class="text-sm text-gray-500">{{ $country }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
+
                 </div>
 
                 <div class="swiper-pagination !bottom-0"></div>
