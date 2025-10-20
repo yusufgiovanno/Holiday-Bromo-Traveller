@@ -228,9 +228,10 @@ $galleries = DB::table('wp_posts')
             
             <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl mb-6">
                 <div class="bg-white p-4 rounded-lg shadow-inner mb-4">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=weixin://dl/chat?BromoTourOperator" 
+                    <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=weixin://dl/chat?BromoTourOperator" 
                          alt="WeChat QR Code" 
-                         class="w-full h-auto">
+                         class="w-full h-auto"> -->
+                         <img src="{{ asset('assets/wechat.png') }}" alt="Wechat" class="w-full h-auto">
                 </div>
                 <p class="text-center text-gray-600 text-sm">
                     Open WeChat and scan this QR code to add us
