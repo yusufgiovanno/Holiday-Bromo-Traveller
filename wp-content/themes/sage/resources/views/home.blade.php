@@ -1,8 +1,3 @@
-{{--
-  Template Name: Home Page
-  Template Post Type: page
---}}
-
 @php
 use MI\DB;
 
@@ -102,11 +97,11 @@ $galleries = DB::table('wp_posts')
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="md:col-span-2">
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Travel Date</label>
-                            <input type="date" name="date" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition" />
+                            <input type="date" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition" />
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Duration</label>
-                            <select name="duration" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
+                            <select class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
                                 <option>1 Day</option>
                                 <option>2 Days</option>
                                 <option>3+ Days</option>
@@ -114,7 +109,7 @@ $galleries = DB::table('wp_posts')
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Group Size</label>
-                            <select name="group_size" class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
+                            <select class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition">
                                 <option>Solo Traveler</option>
                                 <option>Couple (2 people)</option>
                                 <option>Small Group (3–6)</option>
@@ -124,18 +119,17 @@ $galleries = DB::table('wp_posts')
                         <div class="md:col-span-2">
                             <label class="block mb-2 text-sm font-semibold text-gray-700">WhatsApp Number</label>
                             <div class="flex rounded-lg border-2 border-gray-200 focus-within:ring-2 focus-within:ring-[#4E8D7C] focus-within:border-[#4E8D7C] overflow-hidden transition">
-                                <!-- <span class="bg-gray-100 text-gray-700 text-sm px-4 flex items-center font-medium">+62</span> -->
-                                <input name="whatsapp"
+                                <input
                                     type="tel"
-                                    placeholder="+62 812-3456-7890"
+                                    placeholder="62 812-3456-7890"
                                     class="w-full p-3 text-sm focus:outline-none"
                                 />
                             </div>
-                            <p class="text-xs text-gray-500 mt-2">please also input your country code</p>
+                            <p class="text-xs text-gray-500 mt-2">We'll send your custom itinerary via WhatsApp</p>
                         </div>
                         <div class="md:col-span-2">
                             <label class="block mb-2 text-sm font-semibold text-gray-700">Email Address (Optional)</label>
-                            <input type="email" name="email" placeholder="your.email@example.com"
+                            <input type="email" placeholder="your.email@example.com"
                                 class="w-full rounded-lg border-2 border-gray-200 p-3 text-sm focus:ring-2 focus:ring-[#4E8D7C] focus:border-[#4E8D7C] transition" />
                         </div>
                     </div>
@@ -195,19 +189,81 @@ $galleries = DB::table('wp_posts')
                         <i class="bi bi-headset text-5xl text-white"></i>
                     </div>
                     <h3 class="font-bold text-2xl mb-3 text-center">Need Help Planning?</h3>
-                    <p class="text-white/90 mb-8 text-center leading-relaxed">
+                    <p class="text-white/90 mb-6 text-center leading-relaxed">
                         Chat with our friendly customer service team and get expert advice for your perfect Mount Bromo adventure.
                     </p>
-                    <a href="https://wa.me/628819859543"
-                        class="bg-white hover:bg-gray-100 text-[#4E8D7C] w-full py-4 rounded-lg flex justify-center items-center gap-3 font-bold transition-all shadow-lg hover:shadow-xl">
-                        <i class="bi bi-whatsapp text-2xl"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
+                    
+                    <div class="space-y-3">
+                        <a href="https://wa.me/628819859543"
+                            class="bg-white hover:bg-gray-100 text-[#4E8D7C] w-full py-3.5 rounded-lg flex justify-center items-center gap-3 font-bold transition-all shadow-lg hover:shadow-xl">
+                            <i class="bi bi-whatsapp text-2xl"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
+                        
+                        <button onclick="openWeChatModal()"
+                            class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white w-full py-3.5 rounded-lg flex justify-center items-center gap-3 font-bold transition-all">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.405-.032zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
+                            </svg>
+                            <span>Add on WeChat</span>
+                        </button>
+                    </div>
+                    
                     <p class="text-white/70 text-sm text-center mt-4">Available 24/7 for your convenience</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="wechatModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onclick="closeWeChatModal(event)">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 transform transition-all" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Scan to Add WeChat</h3>
+                <button onclick="closeWeChatModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl mb-6">
+                <div class="bg-white p-4 rounded-lg shadow-inner mb-4">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=weixin://dl/chat?BromoTourOperator" 
+                         alt="WeChat QR Code" 
+                         class="w-full h-auto">
+                </div>
+                <p class="text-center text-gray-600 text-sm">
+                    Open WeChat and scan this QR code to add us
+                </p>
+            </div>
+            
+            <div class="space-y-3">
+                <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <div class="w-8 h-8 rounded-full bg-[#4E8D7C]/10 flex items-center justify-center flex-shrink-0">
+                        <span class="text-[#4E8D7C] font-bold">1</span>
+                    </div>
+                    <p>Open WeChat app on your phone</p>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <div class="w-8 h-8 rounded-full bg-[#4E8D7C]/10 flex items-center justify-center flex-shrink-0">
+                        <span class="text-[#4E8D7C] font-bold">2</span>
+                    </div>
+                    <p>Tap "+" and select "Scan QR Code"</p>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <div class="w-8 h-8 rounded-full bg-[#4E8D7C]/10 flex items-center justify-center flex-shrink-0">
+                        <span class="text-[#4E8D7C] font-bold">3</span>
+                    </div>
+                    <p>Scan this code to start chatting</p>
+                </div>
+            </div>
+            
+            <button onclick="closeWeChatModal()" 
+                class="w-full mt-6 bg-[#4E8D7C] hover:bg-[#3D7465] text-white py-3 rounded-lg font-semibold transition-all">
+                Got It
+            </button>
+        </div>
+    </div>
 
     <section class="bg-gradient-to-b from-gray-50 to-white py-16">
         <div class="max-w-[1440px] mx-auto px-4">
@@ -288,7 +344,23 @@ $galleries = DB::table('wp_posts')
     </section>
 
     <script>
+        function openWeChatModal() {
+            document.getElementById('wechatModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
 
+        function closeWeChatModal(event) {
+            if (!event || event.target.id === 'wechatModal' || event.type === 'click') {
+                document.getElementById('wechatModal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeWeChatModal();
+            }
+        });
 
         document.addEventListener("DOMContentLoaded", () => {
             const readMoreBtns = document.querySelectorAll('.read-more-btn');
@@ -321,6 +393,7 @@ $galleries = DB::table('wp_posts')
                     }
                 });
             }, 150);
+            
             const testimonialSwiper = new Swiper('.testimonialSwiper', {
                 slidesPerView: 1,
                 spaceBetween: 24,
