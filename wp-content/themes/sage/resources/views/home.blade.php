@@ -24,7 +24,8 @@ $galleries = DB::table('wp_posts')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <section class="relative h-[600px] md:h-[700px] overflow-hidden">
+        <section class="relative h-[90dvh] md:h-[700px] overflow-hidden">
+
         <div
             class="absolute inset-0 bg-cover bg-center"
             style="background-image: url('{{ asset('assets/mount-CoiR9lrY.png') }}');">
