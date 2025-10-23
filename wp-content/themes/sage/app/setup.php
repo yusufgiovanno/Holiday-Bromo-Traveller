@@ -171,10 +171,20 @@ add_action('wp_enqueue_scripts', function () {
             'planner' => [
                 'action' => 'submit_planner_form',
                 '_token' => \wp_create_nonce('planner_form_nonce'),
+            ],
+            'contact' => [
+                'action' => 'submit_contact_form',
+                '_token' => \wp_create_nonce('contact_form_nonce'),
             ]
         ]
 
 
 
     ]);
+});
+
+add_action('pre_get_posts', function ($query) {
+    if ($query->is_search && !is_admin() && $query->is_main_query()) {
+        $query->set('post_type', 'post'); // Limit search to posts only
+    }
 });

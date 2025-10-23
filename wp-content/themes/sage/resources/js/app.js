@@ -5,3 +5,4 @@ import.meta.glob([
 ]);
 
 import './home/home';
+import './contact-us/contact-us';

@@ -3,3 +3,4 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require __DIR__ . '/gallery-option.php';
+require __DIR__ . '/socials.php';

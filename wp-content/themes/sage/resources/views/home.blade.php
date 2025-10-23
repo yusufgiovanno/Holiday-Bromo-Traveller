@@ -15,12 +15,6 @@ $reviews = DB::table('wp_posts p')
             ->limit('10')
             ->orderBy('p.ID', 'DESC')
             ->get();
-
-$galleries = get_option('gallery_images', []);
-$galleries = DB::table('wp_posts')
-            ->select('guid as src')
-            ->whereIn('ID', $galleries)
-            ->col();
 @endphp
 
 @extends('layouts.app')

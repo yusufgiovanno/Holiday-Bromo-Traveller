@@ -3,6 +3,16 @@
   Template Post Type: page
 --}}
 
+@php
+use MI\DB;
+
+$galleries = get_option('gallery_images', []);
+$galleries = DB::table('wp_posts')
+            ->select('guid as src')
+            ->whereIn('ID', $galleries)
+            ->col();
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
@@ -253,34 +263,12 @@
             </div>
 
             <div class="columns-2 md:columns-3 lg:columns-4 [column-gap:1rem]">
-                <a href="https://picsum.photos/1200/800" class="glightbox block mb-4" data-gallery="gallery">
-                    <img src="https://picsum.photos/400/500" alt="Gallery 1"
+                @foreach ($galleries as $key => $gallery)
+                <a href="{{ $gallery }}" class="glightbox block mb-4" data-gallery="gallery">
+                    <img src="{{ $gallery }}" alt="Gallery {{ $key }}"
                         class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
                 </a>
-                <a href="https://picsum.photos/1200/700" class="glightbox block mb-4" data-gallery="gallery">
-                    <img src="https://picsum.photos/400/300" alt="Gallery 2"
-                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-                </a>
-                <a href="https://picsum.photos/1200/900" class="glightbox block mb-4" data-gallery="gallery">
-                    <img src="https://picsum.photos/400/600" alt="Gallery 3"
-                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-                </a>
-                <a href="https://picsum.photos/1200/750" class="glightbox block mb-4" data-gallery="gallery">
-                    <img src="https://picsum.photos/400/400" alt="Gallery 4"
-                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-                </a>
-                <a href="https://picsum.photos/1200/850" class="glightbox block mb-4" data-gallery="gallery">
-                    <img src="https://picsum.photos/400/550" alt="Gallery 5"
-                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-                </a>
-                <a href="https://picsum.photos/1200/820" class="glightbox block mb-4" data-gallery="gallery">
-                    <img src="https://picsum.photos/400/450" alt="Gallery 6"
-                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-                </a>
-                <a href="https://picsum.photos/1200/880" class="glightbox block mb-4" data-gallery="gallery">
-                    <img src="https://picsum.photos/400/350" alt="Gallery 7"
-                        class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
-                </a>
+                @endforeach
             </div>
         </div>
     </section>

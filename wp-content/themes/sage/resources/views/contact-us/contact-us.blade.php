@@ -2,6 +2,9 @@
   Template Name: Contact Us
   Template Post Type: page
 --}}
+@php
+    $social = \App\Controllers\SocialOptions::get_links();
+@endphp
 
 @extends('layouts.app')
 
@@ -16,44 +19,28 @@
     </section>
     <main class="max-w-[1440px] mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Contact Form -->
-        
+
         <section>
             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
                 <h2 class="text-2xl font-semibold mb-8 text-gray-700">Send a Message</h2>
-                <form action="#" method="POST" class="space-y-6">
+                <form action="#" method="POST" class="space-y-6" id="contact-form">
                     <div>
                         <label class="block text-sm font-medium mb-1 text-gray-600">Full Name</label>
-                        <input type="text"
+                        <input type="text" name="name"
                             class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
                             placeholder="John Doe" required>
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium mb-1 text-gray-600">Email</label>
-                        <input type="email"
+                        <input type="email" name="email"
                             class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
                             placeholder="you@example.com" required>
                     </div>
 
-                    <!-- WhatsApp Number -->
-                    <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-600">WhatsApp Number</label>
-                        <div class="flex rounded-lg border border-gray-300 focus-within:ring-1 focus-within:ring-indigo-500 overflow-hidden">
-                            <!-- <span class="bg-gray-100 text-gray-600 text-sm px-3 flex items-center select-none">+62</span> -->
-                            <input
-                                type="tel"
-                                name="whatsapp"
-                                placeholder="+62 812-3456-7890"
-                                class="w-full p-2 text-sm focus:outline-none"
-                                required
-                            >
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Start with your country code (e.g. +62 for Indonesia)</p>
-                    </div>
-
                     <div>
                         <label class="block text-sm font-medium mb-1 text-gray-600">Message</label>
-                        <textarea rows="5"
+                        <textarea rows="5" name="message"
                             class="w-full rounded-md border border-gray-300 p-2 text-sm focus:ring-[#4E8D7C]"
                             placeholder="Write your message..." required></textarea>
                     </div>
@@ -67,11 +54,12 @@
 
                 <!-- Social Links -->
                 <div class="mt-10 flex justify-center text-2xl gap-2">
-                    <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i
+                    <a href="{{ $social['facebook'] }}" class="text-blue-600 hover:text-blue-800 transition"><i
                             class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-pink-500 hover:text-pink-700 transition"><i
+                    <a href="{{ $social['instagram'] }}" class="text-pink-500 hover:text-pink-700 transition"><i
                             class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-black hover:text-gray-700 transition"><i class="fab fa-tiktok"></i></a>
+                    <a href="{{ $social['tiktok'] }}" class="text-black hover:text-gray-700 transition"><i
+                            class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </section>
@@ -84,7 +72,7 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
-
+{{--
         <section class="max-w-[1440px] mx-auto px-4 py-8">
             <div class="columns-2 md:columns-3 lg:columns-4 [column-gap:1rem]">
                 <a href="https://picsum.photos/1200/800" class="glightbox block mb-4" data-gallery="gallery">
@@ -116,7 +104,7 @@
                         class="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-300 object-cover">
                 </a>
             </div>
-        </section>
+        </section> --}}
     <script>
         document.addEventListener("DOMContentLoaded", () => {
         const lightbox = GLightbox({ selector: '.glightbox' });
