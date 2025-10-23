@@ -64,7 +64,7 @@
             <h2 class="text-2xl font-bold mb-1 drop-shadow-lg">
                 <a href="<?php the_permalink(); ?>" class="hover:underline"><?php the_title(); ?></a>
             </h2>
-            <p class="text-xs opacity-95"><?php echo get_the_date(); ?></p>
+            <!-- <p class="text-xs opacity-95"><?php echo get_the_date(); ?></p> -->
             </div>
 
         </article>
@@ -106,7 +106,7 @@
             <h2 class="text-2xl font-bold mb-1 drop-shadow-lg">
                 <a href="<?php the_permalink(); ?>" class="hover:underline"><?php the_title(); ?></a>
             </h2>
-            <p class="text-xs opacity-95"><?php echo get_the_date(); ?></p>
+            <!-- <p class="text-xs opacity-95"><?php echo get_the_date(); ?></p> -->
             </div>
             </article>
         <?php endwhile; wp_reset_postdata(); endif; ?>
